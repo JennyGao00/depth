@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="310d7696-ab57-492c-9dee-6c610a9d3e03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/loaddata.py" beforeDir="false" afterPath="$PROJECT_DIR$/loaddata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mdDWmL9iu8BMZYEDffBoR7u4zO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python.train">
+    <configuration name="convert_torch_to_pytorch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="depth" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/convert_torch_to_pytorch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="datalist (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="depth" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/datalist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="datalist" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="depth" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datalist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="depth" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.convert_torch_to_pytorch" />
+        <item itemvalue="Python.datalist (1)" />
+        <item itemvalue="Python.datalist" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="310d7696-ab57-492c-9dee-6c610a9d3e03" name="Default Changelist" comment="" />
+      <created>1609814608620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609814608620</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2638" y="302" key="#xdebugger.evaluate" timestamp="1609817969744">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2638" y="302" key="#xdebugger.evaluate/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1609817969744" />
+    <state x="743" y="332" width="424" height="480" key="FileChooserDialogImpl" timestamp="1610978367240">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="743" y="332" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1610978367240" />
+    <state x="2663" y="312" width="424" height="480" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610695200210" />
+    <state width="1897" height="348" key="GridCell.Tab.0.bottom" timestamp="1611138073528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="288" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1611111004082" />
+    <state width="1897" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611138073528" />
+    <state width="1897" height="348" key="GridCell.Tab.0.center" timestamp="1611138073528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="288" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1611111004082" />
+    <state width="1897" height="348" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611138073528" />
+    <state width="1897" height="348" key="GridCell.Tab.0.left" timestamp="1611138073528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="288" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1611111004082" />
+    <state width="1897" height="348" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611138073528" />
+    <state width="1897" height="348" key="GridCell.Tab.0.right" timestamp="1611138073528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="288" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1611111004082" />
+    <state width="1897" height="348" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611138073528" />
+    <state width="1897" height="344" key="GridCell.Tab.1.bottom" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.1.center" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.1.center/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.1.left" timestamp="1611138073528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.1.left/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611138073528" />
+    <state width="1897" height="344" key="GridCell.Tab.1.right" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.1.right/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.2.bottom" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.2.bottom/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.2.center" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.2.center/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.2.left" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.2.left/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.2.right" timestamp="1611130856520">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.2.right/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856520" />
+    <state width="1897" height="344" key="GridCell.Tab.3.bottom" timestamp="1611130856514">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.3.bottom/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856514" />
+    <state width="1897" height="344" key="GridCell.Tab.3.center" timestamp="1611130856514">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.3.center/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856514" />
+    <state width="1897" height="344" key="GridCell.Tab.3.left" timestamp="1611130856514">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.3.left/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856514" />
+    <state width="1897" height="344" key="GridCell.Tab.3.right" timestamp="1611130856514">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1897" height="344" key="GridCell.Tab.3.right/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130856514" />
+    <state x="0" y="318" width="1897" height="370" key="dock-window-1" timestamp="1611130431244">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="0" y="318" width="1897" height="370" key="dock-window-1/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130431244" />
+    <state x="0" y="318" width="1897" height="370" key="dock-window-2" timestamp="1611130431244">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="0" y="318" width="1897" height="370" key="dock-window-2/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130431244" />
+    <state x="0" y="318" width="1897" height="370" key="dock-window-3" timestamp="1611130850218">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="0" y="318" width="1897" height="370" key="dock-window-3/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130850218" />
+    <state x="0" y="318" width="1897" height="370" key="dock-window-4" timestamp="1611130850218">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="0" y="318" width="1897" height="370" key="dock-window-4/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1611130850218" />
+    <state x="23" y="195" width="1897" height="370" key="dock-window-5" timestamp="1610029958791">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="23" y="195" width="1897" height="370" key="dock-window-5/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610029958791" />
+    <state x="23" y="195" width="1897" height="370" key="dock-window-6" timestamp="1610030159183">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="23" y="195" width="1897" height="370" key="dock-window-6/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610030159183" />
+    <state x="23" y="195" width="1897" height="370" key="dock-window-7" timestamp="1610030297939">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="23" y="195" width="1897" height="370" key="dock-window-7/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610030297939" />
+    <state x="23" y="195" width="1897" height="370" key="dock-window-8" timestamp="1610030386673">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="23" y="195" width="1897" height="370" key="dock-window-8/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610030386673" />
+    <state x="2543" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1609831349552">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="260" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1609831349552" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/nyudv2_dataloader.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -3,22 +3,24 @@ import numpy as np
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 from PIL import Image
-import torch
+from nyu_transform import *
 
 
-class depthDataset(Dataset):
-    """Face Landmarks dataset."""
+class NYUDV2Dataset(Dataset):
+    """NYUV2D dataset."""
 
-    def __init__(self, csv_file, transform=None):
+    def __init__(self, csv_file, root_path, transform=None):
         self.frame = pd.read_csv(csv_file, header=None)
-        self.transform = transform
+        self.transform = transform 
+        self.root_path = root_path
 
     def __getitem__(self, idx):
         image_name = self.frame.iloc[idx, 0]
         depth_name = self.frame.iloc[idx, 1]
+        root_path = self.root_path
 
-        image = Image.open(image_name)
-        depth = Image.open(depth_name)
+        image = Image.open(root_path+image_name)
+        depth = Image.open(root_path+depth_name)
 
         sample = {'image': image, 'depth': depth}
 
@@ -31,7 +33,7 @@ class depthDataset(Dataset):
         return len(self.frame)
 
 
-def getTrainingData(batch_size=64):
+def getTrainingData_NYUDV2(batch_size, trainlist_path, root_path):
     __imagenet_pca = {
         'eigval': torch.Tensor([0.2175, 0.0188, 0.0045]),
         'eigvec': torch.Tensor([
@@ -43,12 +45,13 @@ def getTrainingData(batch_size=64):
     __imagenet_stats = {'mean': [0.485, 0.456, 0.406],
                         'std': [0.229, 0.224, 0.225]}
 
-    transformed_training = depthDataset(csv_file='./data/nyu2_train.csv',
+    transformed_training = NYUDV2Dataset(csv_file=trainlist_path,
+                                        root_path = root_path,
                                         transform=transforms.Compose([
                                             Scale(240),
                                             RandomHorizontalFlip(),
                                             RandomRotate(5),
-                                            CenterCrop([304, 228], [152, 114]),
+                                            CenterCrop([304, 228], [304, 228]),
                                             ToTensor(),
                                             Lighting(0.1, __imagenet_pca[
                                                 'eigval'], __imagenet_pca['eigvec']),
@@ -62,18 +65,19 @@ def getTrainingData(batch_size=64):
                                         ]))
 
     dataloader_training = DataLoader(transformed_training, batch_size,
-                                     shuffle=True, num_workers=4, pin_memory=False)
+                                     shuffle=True, num_workers=1, pin_memory=False)
 
     return dataloader_training
 
 
-def getTestingData(batch_size=64):
+def getTestingData_NYUDV2(batch_size, testlist_path, root_path):
 
     __imagenet_stats = {'mean': [0.485, 0.456, 0.406],
                         'std': [0.229, 0.224, 0.225]}
-    # scale = random.uniform(1, 1.5)
-    transformed_testing = depthDataset(csv_file='./data/nyu2_test.csv',
-                                       transform=transforms.Compose([
+
+    transformed_testing = NYUDV2Dataset(csv_file=testlist_path,
+                                        root_path=root_path,
+                                        transform=transforms.Compose([
                                            Scale(240),
                                            CenterCrop([304, 228], [304, 228]),
                                            ToTensor(is_test=True),
@@ -82,6 +86,7 @@ def getTestingData(batch_size=64):
                                        ]))
 
     dataloader_testing = DataLoader(transformed_testing, batch_size,
-                                    shuffle=False, num_workers=0, pin_memory=False)
+                                    shuffle=False, num_workers=4, pin_memory=False)
 
     return dataloader_testing
+    
