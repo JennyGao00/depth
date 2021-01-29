@@ -27,15 +27,12 @@ class Sobel(nn.Module):
 	def forward(self, x):
 		out = self.edge_conv(x) 
 		out = out.contiguous().view(-1, 2, x.size(2), x.size(3))
-  
 		return out
 
+
 def total_loss(output, depth_gt):
-
 	losses=[]
-
 	for depth_index in range(len(output)):
-
 		cos = nn.CosineSimilarity(dim=1, eps=0)
 		get_gradient = Sobel().cuda()
 		ones = torch.ones(depth_gt[depth_index].size(0), 1, depth_gt[depth_index].size(2),depth_gt[depth_index].size(3)).float().cuda()
@@ -59,8 +56,58 @@ def total_loss(output, depth_gt):
 
 		losses.append(loss)
 
-
 	total_loss = sum(losses)
 	
 	return total_loss
+
+
+class MaskedMSELoss(nn.Module):
+    def __init__(self):
+        super(MaskedMSELoss, self).__init__()
+
+    def forward(self, pred, target):
+        assert pred.dim() == target.dim(), "inconsistent dimensions"
+        valid_mask = (target > 0).detach()
+        diff = target - pred
+        diff = diff[valid_mask]
+        self.loss = (diff ** 2).mean()
+        return self.loss
+
+
+class MaskedL1Loss(nn.Module):
+    def __init__(self):
+        super(MaskedL1Loss, self).__init__()
+
+    def forward(self, pred, target):
+        assert pred.dim() == target.dim(), "inconsistent dimensions"
+        valid_mask = (target > 0).detach()
+        diff = target - pred
+        diff = diff[valid_mask]
+        self.loss = diff.abs().mean()
+        return self.loss
+
+
+class berHuLoss(nn.Module):
+    def __init__(self):
+        super(berHuLoss, self).__init__()
+
+    def forward(self, pred, target):
+        assert pred.dim() == target.dim(), "inconsistent dimensions"
+
+        huber_c = torch.max(pred - target)
+        huber_c = 0.2 * huber_c
+
+        valid_mask = (target > 0).detach()
+        diff = target - pred
+        diff = diff[valid_mask]
+        diff = diff.abs()
+
+        huber_mask = (diff > huber_c).detach()
+
+        diff2 = diff[huber_mask]
+        diff2 = diff2 ** 2
+
+        self.loss = torch.cat((diff, diff2)).mean()
+
+        return self.loss
 

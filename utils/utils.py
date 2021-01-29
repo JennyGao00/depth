@@ -5,33 +5,34 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 import math
+import glob
 
 cmap = plt.cm.viridis
 
-
-def parse_command():
-    data_names = ['nyudepthv2']
-
-    from dataloaders.dataloader import MyDataloader
-    modality_names = MyDataloader.modality_names
-
-    import argparse
-    parser = argparse.ArgumentParser(description='FastDepth')
-    parser.add_argument('--data', metavar='DATA', default='nyudepthv2',
-                        choices=data_names,
-                        help='dataset: ' + ' | '.join(data_names) + ' (default: nyudepthv2)')
-    parser.add_argument('--modality', '-m', metavar='MODALITY', default='rgb', choices=modality_names,
-                        help='modality: ' + ' | '.join(modality_names) + ' (default: rgb)')
-    parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
-                        help='number of data loading workers (default: 16)')
-    parser.add_argument('--print-freq', '-p', default=50, type=int,
-                        metavar='N', help='print frequency (default: 50)')
-    parser.add_argument('-e', '--evaluate', default='./results/mobilenet-nnconv5dw-skipadd-pruned.pth.tar', type=str, metavar='PATH',)
-    parser.add_argument('--gpu', default='0', type=str, metavar='N', help="gpu id")
-    parser.set_defaults(cuda=True)
-
-    args = parser.parse_args()
-    return args
+#
+# def parse_command():
+#     data_names = ['nyudepthv2']
+#
+#     from dataloaders.dataloader import MyDataloader
+#     modality_names = MyDataloader.modality_names
+#
+#     import argparse
+#     parser = argparse.ArgumentParser(description='FastDepth')
+#     parser.add_argument('--data', metavar='DATA', default='nyudepthv2',
+#                         choices=data_names,
+#                         help='dataset: ' + ' | '.join(data_names) + ' (default: nyudepthv2)')
+#     parser.add_argument('--modality', '-m', metavar='MODALITY', default='rgb', choices=modality_names,
+#                         help='modality: ' + ' | '.join(modality_names) + ' (default: rgb)')
+#     parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
+#                         help='number of data loading workers (default: 16)')
+#     parser.add_argument('--print-freq', '-p', default=50, type=int,
+#                         metavar='N', help='print frequency (default: 50)')
+#     parser.add_argument('-e', '--evaluate', default='./results/mobilenet-nnconv5dw-skipadd-pruned.pth.tar', type=str, metavar='PATH',)
+#     parser.add_argument('--gpu', default='0', type=str, metavar='N', help="gpu id")
+#     parser.set_defaults(cuda=True)
+#
+#     args = parser.parse_args()
+#     return args
 
 
 def colored_depthmap(depth, d_min=None, d_max=None):
@@ -87,6 +88,7 @@ def makedir(directory):
 	if not os.path.exists(directory):
 		os.makedirs(directory)
 
+
 def adjust_learning_rate(optimizer, epoch, init_lr):
 
 	lr = init_lr * (0.1 ** (epoch // 5))
@@ -94,35 +96,45 @@ def adjust_learning_rate(optimizer, epoch, init_lr):
 	for param_group in optimizer.param_groups:
 		param_group['lr'] = lr
 
-class AverageMeter(object):
-	def __init__(self):
-		self.reset()
+# class AverageMeter(object):
+# 	def __init__(self):
+# 		self.reset()
+#
+# 	def reset(self):
+# 		self.val = 0
+# 		self.avg = 0
+# 		self.sum = 0
+# 		self.count = 0
+#
+# 	def update(self, val, n=1):
+# 		self.val = val
+# 		self.sum += val * n
+# 		self.count += n
+# 		self.avg = self.sum / self.count
+def get_output_dir(dir):
+	dir = str(dir)
+	save_dir_root = os.path.join(os.path.dirname(os.path.abspath(__file__)))
+	save_dir_root = os.path.join(save_dir_root, dir)
+	runs = sorted(glob.glob(os.path.join(save_dir_root, 'run_*')))
+	run_id = int(runs[-1].split('_')[-1]) + 1 if runs else 0
 
-	def reset(self):
-		self.val = 0
-		self.avg = 0
-		self.sum = 0
-		self.count = 0
+	save_dir = os.path.join(save_dir_root, 'run_' + str(run_id))
+	return save_dir
 
-	def update(self, val, n=1):
-		self.val = val
-		self.sum += val * n
-		self.count += n
-		self.avg = self.sum / self.count
 
 def save_checkpoint(state, filename):
 	torch.save(state, filename)
 
 
-def edge_detection(depth):
-	get_edge = Sobel().cuda()
-
-	edge_xy = get_edge(depth)
-	edge_sobel = torch.pow(edge_xy[:, 0, :, :], 2) + \
-		torch.pow(edge_xy[:, 1, :, :], 2)
-	edge_sobel = torch.sqrt(edge_sobel)
-
-	return edge_sobel
+# def edge_detection(depth):
+# 	get_edge = Sobel().cuda()
+#
+# 	edge_xy = get_edge(depth)
+# 	edge_sobel = torch.pow(edge_xy[:, 0, :, :], 2) + \
+# 		torch.pow(edge_xy[:, 1, :, :], 2)
+# 	edge_sobel = torch.sqrt(edge_sobel)
+#
+# 	return edge_sobel
 
 def build_optimizer(model,
 					learning_rate, 

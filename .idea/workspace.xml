@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="310d7696-ab57-492c-9dee-6c610a9d3e03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/loaddata.py" beforeDir="false" afterPath="$PROJECT_DIR$/loaddata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization_XYZ.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loaddata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nyu_transform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nyudv2_dataloader.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,9 +149,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2638" y="302" key="#xdebugger.evaluate/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1609817969744" />
-    <state x="743" y="332" width="424" height="480" key="FileChooserDialogImpl" timestamp="1610978367240">
+    <state x="743" y="332" width="424" height="480" key="FileChooserDialogImpl" timestamp="1611737258447">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
+    <state x="743" y="332" key="FileChooserDialogImpl/0.28.1920.1052@0.28.1920.1052" timestamp="1611737258447" />
     <state x="743" y="332" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1052@0.28.1920.1052" timestamp="1610978367240" />
     <state x="2663" y="312" width="424" height="480" key="FileChooserDialogImpl/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1610695200210" />
     <state width="1897" height="348" key="GridCell.Tab.0.bottom" timestamp="1611138073528">
@@ -252,16 +259,5 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="260" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.28.1920.1052@1920.0.1920.1080" timestamp="1609831349552" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/nyudv2_dataloader.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
