@@ -2,6 +2,7 @@ import os
 import torch
 import shutil
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from PIL import Image
 import math
@@ -89,6 +90,35 @@ def makedir(directory):
 		os.makedirs(directory)
 
 
+def build_optimizer(model,
+                    learning_rate,
+                    optimizer_name='rmsprop',
+                    weight_decay=1e-5,
+                    epsilon=0.001,
+                    momentum=0.9):
+    """Build optimizer"""
+    if optimizer_name == "sgd":
+        print("Using SGD optimizer.")
+        optimizer = torch.optim.SGD(model.parameters(),
+                                    lr=learning_rate,
+                                    momentum=momentum,
+                                    weight_decay=weight_decay)
+
+    elif optimizer_name == 'rmsprop':
+        print("Using RMSProp optimizer.")
+        optimizer = torch.optim.RMSprop(model.parameters(),
+                                        lr=learning_rate,
+                                        eps=epsilon,
+                                        weight_decay=weight_decay,
+                                        momentum=momentum
+                                        )
+    elif optimizer_name == 'adam':
+        print("Using Adam optimizer.")
+        optimizer = torch.optim.Adam(model.parameters(),
+                                     lr=learning_rate, weight_decay=weight_decay)
+    return optimizer
+
+
 def adjust_learning_rate(optimizer, epoch, init_lr):
 
 	lr = init_lr * (0.1 ** (epoch // 5))
@@ -122,9 +152,15 @@ def get_output_dir(dir):
 	return save_dir
 
 
-def save_checkpoint(state, filename):
-	torch.save(state, filename)
+def save_checkpoint(state, is_best, epoch, output_directory):
+	checkpoint_filename = os.path.join(output_directory, 'checkpoint-' + str(epoch) + '.pth.tar')
+	torch.save(state, checkpoint_filename)
+	if is_best:
+		best_filename = os.path.join(output_directory, 'model_best.pth.tar')
+		shutil.copyfile(checkpoint_filename, best_filename)
 
+# def save_checkpoint(state, filename):
+# 	torch.save(state, filename)
 
 # def edge_detection(depth):
 # 	get_edge = Sobel().cuda()
@@ -289,26 +325,3 @@ def colormap(image, cmap="jet"):
 	color_map = colors[indices].transpose(1, 2).transpose(0, 1)
 
 	return color_map
-
-
-
-def draw_losses(logger, loss, global_step):
-	name = "train_loss"
-	logger.add_scalar(name, loss, global_step)
-
-def draw_images(logger, all_draw_image, global_step):
-	for image_name, images in all_draw_image.items():
-		if images.shape[1] == 1:
-			images = colormap(images)
-		elif images.shape[1] == 3:
-			__imagenet_stats = {'mean': [0.485, 0.456, 0.406],
-						'std': [0.229, 0.224, 0.225]}
-			for channel in np.arange(images.shape[1]):
-				images[:, channel, :, :]  = images[:, channel, :, :] * __imagenet_stats["std"][channel] + __imagenet_stats["mean"][channel] 
-
-		if len(images.shape) == 3:
-			images = images[np.newaxis, :, :, :] 
-		if images.shape[0]>4:
-			images = images[:4, :, :, :]
-		logger.add_image(image_name, images, global_step, dataformats='NCHW')
-

@@ -31,8 +31,8 @@ class Result(object):
     def evaluate(self, output, target):
         valid_mask = ((target>0) + (output>0)) > 0
 
-        output = 1e3 * output[valid_mask]
-        target = 1e3 * target[valid_mask]
+        # output = 1e3 * output[valid_mask]
+        # target = 1e3 * target[valid_mask]
         abs_diff = (output - target).abs()
 
         self.mse = float((torch.pow(abs_diff, 2)).mean())
@@ -41,7 +41,7 @@ class Result(object):
         self.lg10 = float((log10(output) - log10(target)).abs().mean())
         self.absrel = float((abs_diff / target).mean())
 
-        maxRatio = torch.max(output / target, target / output)
+        maxRatio = torch.max(abs(output / target), abs(target / output))
         self.delta1 = float((maxRatio < 1.25).float().mean())
         self.delta2 = float((maxRatio < 1.25 ** 2).float().mean())
         self.delta3 = float((maxRatio < 1.25 ** 3).float().mean())
